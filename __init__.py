@@ -6,7 +6,7 @@ __url__ = "https://github.com/anekobtw/youthon"
 __title__ = "youthon"
 __author__ = "anekobtw"
 __license__ = "MIT"
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 from src.youthon import Channel
 
