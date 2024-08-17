@@ -8,7 +8,6 @@ __author__ = "anekobtw"
 __license__ = "MIT"
 __version__ = "0.1.0"
 
-
 from src.youthon import Channel
 
-__all__ = ("Channel")
+__all__ = "Channel"

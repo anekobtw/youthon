@@ -1,18 +1,20 @@
-import Channel
+import youthon
 
-channel = Channel("https://www.youtube.com/@PewDiePie")
+channel = youthon.Channel("https://www.youtube.com/@PewDiePie")
 
-print(channel.name)
-print(channel.description)
-print(channel.channel_url)
-print(channel.profile_photo_url)
-print(channel.channel_id)
+print(channel.name)  # PewDiePie
+print(channel.description)  # I make videos.
+print(channel.channel_url)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw
+print(channel.profile_photo_url)  # https://yt3.googleusercontent.com/5oUY3tashyxfqsjO5SGhjT4dus8FkN9CsAHwXWISFrdPYii1FudD4ICtLfuCw6-THJsJbgoY=s900-c-k-c0x00ffffff-no-rj
+print(channel.channel_id)  # UC-lHJZR3Gqxm24_Vd_AJ5Yw
+
+# The following two variables may produce different results depending on your geolocation.
 print(channel.subscribers_count)
 print(channel.video_count)
 
-print(channel.videos_page)
-print(channel.shorts_page)
-print(channel.community_page)
-print(channel.featured_channels_page)
-print(channel.playlists_page)
-print(channel.about_page)
+print(channel.videos_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw/videos
+print(channel.shorts_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw/shorts
+print(channel.community_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw/community
+print(channel.featured_channels_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw/channels
+print(channel.playlists_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw/playlists
+print(channel.about_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw/about
