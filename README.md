@@ -6,19 +6,20 @@
 A lightweight YouTube data scraper.
 
 # Installing
-#### pip
+### pip
 To install from PyPI with pip:
 ```
 $ pip install youthon
 ```
 
-#### poetry
+### poetry
 You can add youthon as a dependency with the following command
 ```
 $ poetry add youthon
 ```
 
 # Usage Examples
+### Fetching channels
 ```py
 import youthon
 
@@ -40,6 +41,26 @@ print(channel.community_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24
 print(channel.featured_channels_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw/channels
 print(channel.playlists_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw/playlists
 print(channel.about_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw/about
+```
+
+### Fetching videos
+```py
+import youthon
+
+video = youthon.Video("https://youtu.be/XqZsoesa55w")
+
+print(video.title)  #  Baby Shark Dance | #babyshark Most Viewed Video | Animal Songs | PINKFONG Songs for Children
+print(video.description)  # a loooong description :)
+print(video.author)  # Baby Shark - Pinkfong Kids’ Songs & Stories
+print(video.video_url)  # https://www.youtube.com/watch?v=XqZsoesa55w
+
+print(video.views)  # 14941899516
+print(video.thumbnail_url)  #https://i.ytimg.com/vi/XqZsoesa55w/maxresdefault.jpg
+print(video.date_published)  # 2016-06-17 16:00:30-07:00
+print(video.legth_seconds)  # 136
+print(video.isLiveContent)  # False
+print(video.is_private)  # False
+print(video.genre)  # Education
 ```
 
 ## About the project
