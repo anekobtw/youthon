@@ -2,6 +2,7 @@
 ![version](https://img.shields.io/badge/Project_version-0.2.0-blue)
 ![licence](https://img.shields.io/badge/License-MIT-green)
 ![made with love](https://img.shields.io/badge/Made_with-Love-red)
+[![pypi](https://img.shields.io/badge/youthon_on_PyPi-blue)](https://pypi.org/project/youthon/)
 
 A lightweight YouTube data scraper.
 
