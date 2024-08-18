@@ -1,5 +1,5 @@
 # `youthon`
-![version](https://img.shields.io/badge/Project_version-0.1.1-blue)
+![version](https://img.shields.io/badge/Project_version-0.2.0-blue)
 ![licence](https://img.shields.io/badge/License-MIT-green)
 ![made with love](https://img.shields.io/badge/Made_with-Love-red)
 

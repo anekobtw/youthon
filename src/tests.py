@@ -1,6 +1,7 @@
-import youthon
+import channel
+import video
 
-channel = youthon.Channel("https://www.youtube.com/@PewDiePie")
+channel = channel.Channel("https://www.youtube.com/@PewDiePie")
 
 print(channel.name)  # PewDiePie
 print(channel.description)  # I make videos.
@@ -18,3 +19,19 @@ print(channel.community_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24
 print(channel.featured_channels_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw/channels
 print(channel.playlists_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw/playlists
 print(channel.about_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw/about
+
+
+video = video.Video("https://youtu.be/XqZsoesa55w")
+
+print(video.title)  #  Baby Shark Dance | #babyshark Most Viewed Video | Animal Songs | PINKFONG Songs for Children
+print(video.description)  # it returns a looong description
+print(video.author)  # Baby Shark - Pinkfong Kids’ Songs & Stories
+print(video.video_url)  # https://www.youtube.com/watch?v=XqZsoesa55w
+
+print(video.views)  # 14941899516
+print(video.thumbnail_url)  #https://i.ytimg.com/vi/XqZsoesa55w/maxresdefault.jpg
+print(video.date_published)  # 2016-06-17 16:00:30-07:00
+print(video.legth_seconds)  # 136
+print(video.isLiveContent)  # False
+print(video.is_private)  # False
+print(video.genre)  # Education
