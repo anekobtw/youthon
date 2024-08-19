@@ -10,7 +10,7 @@ class Video:
     def __init__(self, url: str) -> None:
         response = urllib.request.urlopen(url).read().decode("utf8")
         soup = BeautifulSoup(response, "html.parser")
-        videoDetails = self.get_initial_data(script_content=str(soup.find_all("script")[20]))["videoDetails"]
+        videoDetails = self.get_initial_data(script_content=str(soup.find_all("script")[27 if "shorts" in url else 20]))["videoDetails"]
 
         self.title: str = self._get_meta_content(soup, property="og:title")
         self.video_url: str = self._get_meta_content(soup, property="og:url")
@@ -24,7 +24,6 @@ class Video:
         self.author: str = videoDetails["author"]
         self.legth_seconds: int = int(videoDetails["lengthSeconds"])
 
-        print(type(self.isLiveContent))
         self.date_published: datetime = datetime.fromisoformat(soup.find("meta", itemprop="datePublished")["content"])
 
     @staticmethod
