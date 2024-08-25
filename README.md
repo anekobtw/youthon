@@ -64,6 +64,20 @@ print(video.is_private)  # False
 print(video.genre)  # Education
 ```
 
+### Fetching playlists
+```py
+import youthon
+
+playlist = youthon.Playlist("https://www.youtube.com/watch?v=K4DyBUG242c&list=PLRBp0Fe2Gpgm_u2w2a2isHw29SugZ34cD&ab_channel=NoCopyrightSounds")
+
+print(playlist.title)  # NCS : The Top 100 Biggest Songs 📈
+print(playlist.author)  # NoCopyrightSounds
+print(playlist.total_videos)  # 100
+print(playlist.playlist_id)  # PLRBp0Fe2Gpgm_u2w2a2isHw29SugZ34cD
+print(playlist.playlist_url)  # https://www.youtube.com/playlist?list=PLRBp0Fe2Gpgm_u2w2a2isHw29SugZ34cD
+print(playlist.video_urls)  # ['https://youtube.com/watch/?v=K4DyBUG242c', 'https://youtube.com/watch/?v=3nQNiWdeH2Q', 'https://youtube.com/watch/?v=J2X5mJ3HDYE', ... ]
+```
+
 ## About the project
 ### Authors
 - [@anekobtw](https://www.github.com/anekobtw) 
