@@ -1,4 +1,5 @@
 import channel
+import playlist
 import video
 
 
@@ -57,6 +58,17 @@ def example_shorts_video():
     print(video2.genre)
 
 
+def example_playlist():
+    playlist1 = playlist.Playlist("https://www.youtube.com/watch?v=K4DyBUG242c&list=PLRBp0Fe2Gpgm_u2w2a2isHw29SugZ34cD&ab_channel=NoCopyrightSounds")
+    print(playlist1.title)  # NCS : The Top 100 Biggest Songs 📈
+    print(playlist1.author)  # NoCopyrightSounds
+    print(playlist1.total_videos)  # 100
+    print(playlist1.playlist_id)  # PLRBp0Fe2Gpgm_u2w2a2isHw29SugZ34cD
+    print(playlist1.playlist_url)  # https://www.youtube.com/playlist?list=PLRBp0Fe2Gpgm_u2w2a2isHw29SugZ34cD
+    print(playlist1.video_urls)  # ['https://youtube.com/watch/?v=K4DyBUG242c', 'https://youtube.com/watch/?v=3nQNiWdeH2Q', 'https://youtube.com/watch/?v=J2X5mJ3HDYE', ... ]
+
+
 example_channel()
 example_video()
 example_shorts_video()
+example_playlist()

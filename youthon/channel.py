@@ -1,15 +1,15 @@
-import json
-import re
 import urllib.request
 
 from bs4 import BeautifulSoup
+
+from funcs import get_initial_data
 
 
 class Channel:
     def __init__(self, url: str) -> None:
         response = urllib.request.urlopen(url).read().decode("utf8")
         soup = BeautifulSoup(response, "html.parser")
-        initial_data = self.get_initial_data(script_content=str(soup.find_all("script")[24]))
+        initial_data = get_initial_data(script_content=str(soup.find_all("script")[24]))
 
         self.name = self._get_meta_content(soup, 5)
         self.description: str = self._get_meta_content(soup, 11)
@@ -34,14 +34,3 @@ class Channel:
             return str(soup.find_all("meta")[index]["content"])
         except (IndexError, KeyError):
             return ""
-
-    @staticmethod
-    def get_initial_data(script_content: str) -> str | Exception:
-        pattern = re.compile(r"var ytInitialData = ({.*?});", re.DOTALL)
-        match = pattern.search(script_content)
-
-        if match:
-            json_str = match.group(1)
-            return json.loads(json_str)
-        else:
-            raise Exception("ytInitialData not found.")

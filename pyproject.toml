@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "youthon"
-version = "0.2.1"
+version = "0.3.0"
 description = "A lightweight YouTube data scraper."
 authors = ["anekobtw"]
 license = "MIT"
