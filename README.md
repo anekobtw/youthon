@@ -1,5 +1,5 @@
 # `youthon`
-![version](https://img.shields.io/badge/Project_version-0.3.0-blue)
+![version](https://img.shields.io/badge/Project_version-0.3.1-blue)
 ![licence](https://img.shields.io/badge/License-MIT-green)
 ![made with love](https://img.shields.io/badge/Made_with-Love-red)
 [![pypi](https://img.shields.io/badge/youthon_on_PyPi-blue)](https://pypi.org/project/youthon/)
@@ -71,7 +71,7 @@ import youthon
 playlist = youthon.Playlist("https://www.youtube.com/watch?v=K4DyBUG242c&list=PLRBp0Fe2Gpgm_u2w2a2isHw29SugZ34cD&ab_channel=NoCopyrightSounds")
 
 print(playlist.title)  # NCS : The Top 100 Biggest Songs 📈
-print(playlist.author)  # NoCopyrightSounds
+print(playlist.author.name)  # NoCopyrightSounds
 print(playlist.total_videos)  # 100
 print(playlist.playlist_id)  # PLRBp0Fe2Gpgm_u2w2a2isHw29SugZ34cD
 print(playlist.playlist_url)  # https://www.youtube.com/playlist?list=PLRBp0Fe2Gpgm_u2w2a2isHw29SugZ34cD
