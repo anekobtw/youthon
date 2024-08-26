@@ -1,8 +1,25 @@
+import time
+from functools import wraps
+
 import channel
 import playlist
 import video
 
 
+def timeit(func):
+    @wraps(func)
+    def timeit_wrapper(*args, **kwargs):
+        start_time = time.perf_counter()
+        result = func(*args, **kwargs)
+        end_time = time.perf_counter()
+        total_time = end_time - start_time
+        print(f"Function {func.__name__}{args} {kwargs} Took {total_time:.4f} seconds")
+        return result
+
+    return timeit_wrapper
+
+
+@timeit
 def example_channel():
     channel1 = channel.Channel("https://www.youtube.com/@PewDiePie")
 
@@ -24,6 +41,7 @@ def example_channel():
     print(channel1.about_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw/about
 
 
+@timeit
 def example_video():
     video1 = video.Video("https://youtu.be/XqZsoesa55w")
 
@@ -41,6 +59,7 @@ def example_video():
     print(video1.genre)  # Education
 
 
+@timeit
 def example_shorts_video():
     video2 = video.Video("https://www.youtube.com/shorts/JfbnpYLe3Ms")
 
@@ -58,6 +77,7 @@ def example_shorts_video():
     print(video2.genre)
 
 
+@timeit
 def example_playlist():
     playlist1 = playlist.Playlist("https://www.youtube.com/watch?v=K4DyBUG242c&list=PLRBp0Fe2Gpgm_u2w2a2isHw29SugZ34cD&ab_channel=NoCopyrightSounds")
     print(playlist1.title)  # NCS : The Top 100 Biggest Songs 📈

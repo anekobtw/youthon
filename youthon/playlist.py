@@ -15,7 +15,6 @@ class Playlist:
         initial_data = get_initial_data(str(soup.find_all("script")[45]))
         self.playlist_data = initial_data["contents"]["twoColumnWatchNextResults"]["playlist"]["playlist"]
 
-
         self.title: str = self.playlist_data["title"]
         self.author: Channel = Channel(soup.find_all("span")[0].find("link")["href"])
         self.playlist_id: str = self.playlist_data["playlistId"]

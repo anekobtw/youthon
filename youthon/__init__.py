@@ -9,7 +9,7 @@ __license__ = "MIT"
 __version__ = "0.3.2"
 
 from channel import Channel
-from video import Video
 from playlist import Playlist
+from video import Video
 
 __all__ = ("Channel", "Video", "Playlist")
