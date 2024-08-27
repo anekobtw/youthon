@@ -2,7 +2,7 @@ import urllib.request
 
 from bs4 import BeautifulSoup
 
-from funcs import get_initial_data
+from youthon.funcs import get_initial_data
 
 
 class Channel:

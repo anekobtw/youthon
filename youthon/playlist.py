@@ -3,9 +3,9 @@ import urllib.request
 
 from bs4 import BeautifulSoup
 
-from channel import Channel
-from funcs import get_initial_data
-from video import Video
+from youthon.channel import Channel
+from youthon.funcs import get_initial_data
+from youthon.video import Video
 
 
 class Playlist:

@@ -1,9 +1,9 @@
 import time
 from functools import wraps
 
-import channel
-import playlist
-import video
+import youthon.channel
+import youthon.playlist
+import youthon.video
 
 
 def timeit(func):

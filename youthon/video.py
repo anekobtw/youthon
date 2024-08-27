@@ -3,7 +3,7 @@ from datetime import datetime
 
 from bs4 import BeautifulSoup
 
-from funcs import get_initial_player_response
+from youthon.funcs import get_initial_player_response
 
 
 class Video:
