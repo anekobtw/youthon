@@ -6,10 +6,10 @@ __url__ = "https://github.com/anekobtw/youthon"
 __title__ = "youthon"
 __author__ = "anekobtw"
 __license__ = "MIT"
-__version__ = "0.3.2"
+__version__ = "0.3.3"
 
-from channel import Channel
-from playlist import Playlist
-from video import Video
+from youthon.channel import Channel
+from youthon.playlist import Playlist
+from youthon.video import Video
 
 __all__ = ("Channel", "Video", "Playlist")
