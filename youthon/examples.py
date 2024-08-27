@@ -1,9 +1,9 @@
 import time
 from functools import wraps
 
-import youthon.channel
-import youthon.playlist
-import youthon.video
+from youthon.channel import Channel
+from youthon.playlist import Playlist
+from youthon.video import Video
 
 
 def timeit(func):
@@ -21,7 +21,7 @@ def timeit(func):
 
 @timeit
 def example_channel():
-    channel1 = channel.Channel("https://www.youtube.com/@PewDiePie")
+    channel1 = Channel("https://www.youtube.com/@PewDiePie")
 
     print(channel1.name)  # PewDiePie
     print(channel1.description)  # I make videos.
@@ -43,7 +43,7 @@ def example_channel():
 
 @timeit
 def example_video():
-    video1 = video.Video("https://youtu.be/XqZsoesa55w")
+    video1 = Video("https://youtu.be/XqZsoesa55w")
 
     print(video1.title)  #  Baby Shark Dance | #babyshark Most Viewed Video | Animal Songs | PINKFONG Songs for Children
     print(video1.description)  # a loooong description :)
@@ -61,7 +61,7 @@ def example_video():
 
 @timeit
 def example_shorts_video():
-    video2 = video.Video("https://www.youtube.com/shorts/JfbnpYLe3Ms")
+    video2 = Video("https://www.youtube.com/shorts/JfbnpYLe3Ms")
 
     print(video2.title)
     print(video2.description)
@@ -79,7 +79,7 @@ def example_shorts_video():
 
 @timeit
 def example_playlist():
-    playlist1 = playlist.Playlist("https://www.youtube.com/watch?v=K4DyBUG242c&list=PLRBp0Fe2Gpgm_u2w2a2isHw29SugZ34cD&ab_channel=NoCopyrightSounds")
+    playlist1 = Playlist("https://www.youtube.com/watch?v=K4DyBUG242c&list=PLRBp0Fe2Gpgm_u2w2a2isHw29SugZ34cD&ab_channel=NoCopyrightSounds")
     print(playlist1.title)  # NCS : The Top 100 Biggest Songs 📈
     print(playlist1.author.name)  # NoCopyrightSounds
     print(playlist1.total_videos)  # 100
