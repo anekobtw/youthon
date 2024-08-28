@@ -5,25 +5,30 @@ from graphviz import Digraph
 
 
 def get_initial_data(script_content: str) -> str | Exception:
-    pattern = re.compile(r"var ytInitialData = ({.*?});", re.DOTALL)
-    match = pattern.search(script_content)
+    attempts = 1
+    while attempts <= 5:
+        pattern = re.compile(r"var ytInitialData = ({.*?});", re.DOTALL)
+        match = pattern.search(script_content)
 
-    if match:
-        json_str = match.group(1)
-        return json.loads(json_str)
-    else:
-        raise Exception("ytInitialData not found.")
-
+        if match:
+            json_str = match.group(1)
+            return json.loads(json_str)
+        else:
+            attempts += 1
+    raise Exception("ytInitialData was not found.")
 
 def get_initial_player_response(script_content: str) -> str | Exception:
-    pattern = re.compile(r"var ytInitialPlayerResponse = ({.*?});", re.DOTALL)
-    match = pattern.search(script_content)
+    attempts = 1
+    while attempts <= 5:
+        pattern = re.compile(r"var ytInitialPlayerResponse = ({.*?});", re.DOTALL)
+        match = pattern.search(script_content)
 
-    if match:
-        json_str = match.group(1)
-        return json.loads(json_str)
-    else:
-        raise Exception("ytInitialPlayerResponse not found.")
+        if match:
+            json_str = match.group(1)
+            return json.loads(json_str)
+        else:
+            attempts += 1
+    raise Exception("ytInitialPlayerResponse not found.")
 
 
 def visualize_dict(d, parent_key=None, graph=None):

@@ -53,7 +53,7 @@ def example_video():
     print(video1.views)  # 14941899516
     print(video1.thumbnail_url)  # https://i.ytimg.com/vi/XqZsoesa55w/maxresdefault.jpg
     print(video1.date_published)  # 2016-06-17 16:00:30-07:00
-    print(video1.legth_seconds)  # 136
+    print(video1.length_seconds)  # 136
     print(video1.isLiveContent)  # False
     print(video1.is_private)  # False
     print(video1.genre)  # Education
@@ -71,7 +71,7 @@ def example_shorts_video():
     print(video2.views)
     print(video2.thumbnail_url)
     print(video2.date_published)
-    print(video2.legth_seconds)
+    print(video2.length_seconds)
     print(video2.isLiveContent)
     print(video2.is_private)
     print(video2.genre)

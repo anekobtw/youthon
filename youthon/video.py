@@ -22,7 +22,7 @@ class Video:
         self.isLiveContent: bool = videoDetails["isLiveContent"]
         self.description: str = videoDetails["shortDescription"]
         self.author: str = videoDetails["author"]
-        self.legth_seconds: int = int(videoDetails["lengthSeconds"])
+        self.length_seconds: int = int(videoDetails["lengthSeconds"])
 
         self.date_published: datetime = datetime.fromisoformat(soup.find("meta", itemprop="datePublished")["content"])
 
