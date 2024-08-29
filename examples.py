@@ -1,9 +1,7 @@
 import time
 from functools import wraps
 
-from youthon.channel import Channel
-from youthon.playlist import Playlist
-from youthon.video import Video
+from youthon import Channel, Playlist, Video
 
 
 def timeit(func):
@@ -81,7 +79,7 @@ def example_shorts_video():
 def example_playlist():
     playlist1 = Playlist("https://www.youtube.com/watch?v=K4DyBUG242c&list=PLRBp0Fe2Gpgm_u2w2a2isHw29SugZ34cD&ab_channel=NoCopyrightSounds")
     print(playlist1.title)  # NCS : The Top 100 Biggest Songs 📈
-    print(playlist1.author.name)  # NoCopyrightSounds
+    print(playlist1.author_url)  # http://www.youtube.com/@NoCopyrightSounds
     print(playlist1.total_videos)  # 100
     print(playlist1.playlist_id)  # PLRBp0Fe2Gpgm_u2w2a2isHw29SugZ34cD
     print(playlist1.playlist_url)  # https://www.youtube.com/playlist?list=PLRBp0Fe2Gpgm_u2w2a2isHw29SugZ34cD

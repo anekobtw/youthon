@@ -1,6 +1,6 @@
-import urllib.request
 from datetime import datetime
 
+import requests
 from bs4 import BeautifulSoup
 
 from youthon.funcs import get_initial_player_response
@@ -8,31 +8,24 @@ from youthon.funcs import get_initial_player_response
 
 class Video:
     def __init__(self, url: str) -> None:
-        response = urllib.request.urlopen(url).read().decode("utf8")
-        soup = BeautifulSoup(response, "html.parser")
-        videoDetails = get_initial_player_response(script_content=str(soup.find_all("script")[27 if "shorts" in url else 20]))["videoDetails"]
+        headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36", "X-Amzn-Trace-Id": "Root=1-61acac03-6279b8a6274777eb44d81aae", "X-Client-Data": "CJW2yQEIpLbJAQjEtskBCKmdygEIuevKAQjr8ssBCOaEzAEItoXMAQjLicwBCKyOzAEI3I7MARiOnssB"}
+        response = requests.get(url, headers=headers)
+        soup = BeautifulSoup(response.content, "html.parser")
 
-        self.title: str = self._get_meta_content(soup, property="og:title")
-        self.video_url: str = self._get_meta_content(soup, property="og:url")
-        self.thumbnail_url: str = self._get_meta_content(soup, property="og:image")
-        self.views: str = int(self._get_meta_content(soup, itemprop="interactionCount"))
-        self.genre: str = self._get_meta_content(soup, itemprop="genre")
+        video_details = get_initial_player_response(response)["videoDetails"]
+        meta_tags = {tag.get("name"): tag.get("content") for tag in soup.find_all("meta") if tag.get("name")}
 
-        self.is_private: bool = videoDetails["isPrivate"]
-        self.isLiveContent: bool = videoDetails["isLiveContent"]
-        self.description: str = videoDetails["shortDescription"]
-        self.author: str = videoDetails["author"]
-        self.length_seconds: int = int(videoDetails["lengthSeconds"])
+        self.title = meta_tags.get("og:title", "")
+        self.video_url = meta_tags.get("og:url", "")
+        self.thumbnail_url = meta_tags.get("og:image", "")
+        self.views = int(meta_tags.get("interactionCount", 0))
+        self.genre = meta_tags.get("genre", "")
 
-        self.date_published: datetime = datetime.fromisoformat(soup.find("meta", itemprop="datePublished")["content"])
+        self.is_private = video_details.get("isPrivate", False)
+        self.isLiveContent = video_details.get("isLiveContent", False)
+        self.description = video_details.get("shortDescription", "")
+        self.author = video_details.get("author", "")
+        self.length_seconds = int(video_details.get("lengthSeconds", 0))
 
-    @staticmethod
-    def _get_meta_content(soup: BeautifulSoup, property: str = None, itemprop: str = None) -> str:
-        try:
-            if property:
-                content = soup.find("meta", property=property)["content"]
-            elif itemprop:
-                content = soup.find("meta", itemprop=itemprop)["content"]
-            return str(content)
-        except (TypeError, KeyError, ValueError):
-            return ""
+        date_published_str = meta_tags.get("datePublished", "")
+        self.date_published = datetime.fromisoformat(date_published_str) if date_published_str else None

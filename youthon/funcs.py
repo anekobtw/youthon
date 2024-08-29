@@ -2,33 +2,27 @@ import json
 import re
 
 from graphviz import Digraph
+from requests import Response
 
 
-def get_initial_data(script_content: str) -> str | Exception:
-    attempts = 1
-    while attempts <= 5:
-        pattern = re.compile(r"var ytInitialData = ({.*?});", re.DOTALL)
-        match = pattern.search(script_content)
+def get_yt_initial_data(response: Response):
+    pattern = re.compile(r"ytInitialData\s*=\s*({.*?});", re.DOTALL)
+    match = pattern.search(response.text)
+    if not match:
+        raise Exception("ytInitialData not found in the page")
 
-        if match:
-            json_str = match.group(1)
-            return json.loads(json_str)
-        else:
-            attempts += 1
-    raise Exception("ytInitialData was not found.")
+    json_str = match.group(1)
+    return json.loads(json_str)
 
-def get_initial_player_response(script_content: str) -> str | Exception:
-    attempts = 1
-    while attempts <= 5:
-        pattern = re.compile(r"var ytInitialPlayerResponse = ({.*?});", re.DOTALL)
-        match = pattern.search(script_content)
 
-        if match:
-            json_str = match.group(1)
-            return json.loads(json_str)
-        else:
-            attempts += 1
-    raise Exception("ytInitialPlayerResponse not found.")
+def get_initial_player_response(response: Response):
+    pattern = re.compile(r"var ytInitialPlayerResponse\s*=\s*({.*?});", re.DOTALL)
+    match = pattern.search(response.text)
+    if not match:
+        raise Exception("ytInitialPlayerResponse not found in the page")
+
+    json_str = match.group(1)
+    return json.loads(json_str)
 
 
 def visualize_dict(d, parent_key=None, graph=None):

@@ -1,5 +1,5 @@
 # `youthon`
-![version](https://img.shields.io/badge/Project_version-0.3.6-blue)
+![version](https://img.shields.io/badge/Project_version-0.4.0-blue)
 ![licence](https://img.shields.io/badge/License-MIT-green)
 ![made with love](https://img.shields.io/badge/Made_with-Love-red)
 [![pypi](https://img.shields.io/badge/youthon_on_PyPi-blue)](https://pypi.org/project/youthon/)
@@ -56,9 +56,9 @@ print(video.author)  # Baby Shark - Pinkfong Kids’ Songs & Stories
 print(video.video_url)  # https://www.youtube.com/watch?v=XqZsoesa55w
 
 print(video.views)  # 14941899516
-print(video.thumbnail_url)  #https://i.ytimg.com/vi/XqZsoesa55w/maxresdefault.jpg
+print(video.thumbnail_url)  # https://i.ytimg.com/vi/XqZsoesa55w/maxresdefault.jpg
 print(video.date_published)  # 2016-06-17 16:00:30-07:00
-print(video.legth_seconds)  # 136
+print(video.length_seconds)  # 136
 print(video.isLiveContent)  # False
 print(video.is_private)  # False
 print(video.genre)  # Education
@@ -71,7 +71,7 @@ import youthon
 playlist = youthon.Playlist("https://www.youtube.com/watch?v=K4DyBUG242c&list=PLRBp0Fe2Gpgm_u2w2a2isHw29SugZ34cD&ab_channel=NoCopyrightSounds")
 
 print(playlist.title)  # NCS : The Top 100 Biggest Songs 📈
-print(playlist.author.name)  # NoCopyrightSounds
+print(playlist.author.name)  # http://www.youtube.com/@NoCopyrightSounds
 print(playlist.total_videos)  # 100
 print(playlist.playlist_id)  # PLRBp0Fe2Gpgm_u2w2a2isHw29SugZ34cD
 print(playlist.playlist_url)  # https://www.youtube.com/playlist?list=PLRBp0Fe2Gpgm_u2w2a2isHw29SugZ34cD
