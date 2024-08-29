@@ -1,5 +1,5 @@
 # `youthon`
-![version](https://img.shields.io/badge/Project_version-0.4.0-blue)
+![version](https://img.shields.io/badge/Project_version-0.4.1-blue)
 ![licence](https://img.shields.io/badge/License-MIT-green)
 ![made with love](https://img.shields.io/badge/Made_with-Love-red)
 [![pypi](https://img.shields.io/badge/youthon_on_PyPi-blue)](https://pypi.org/project/youthon/)
@@ -52,16 +52,16 @@ video = youthon.Video("https://youtu.be/XqZsoesa55w")
 
 print(video.title)  #  Baby Shark Dance | #babyshark Most Viewed Video | Animal Songs | PINKFONG Songs for Children
 print(video.description)  # a loooong description :)
-print(video.author)  # Baby Shark - Pinkfong Kids’ Songs & Stories
+print(video.author_name)  # Baby Shark - Pinkfong Kids’ Songs & Stories
 print(video.video_url)  # https://www.youtube.com/watch?v=XqZsoesa55w
 
 print(video.views)  # 14941899516
-print(video.thumbnail_url)  # https://i.ytimg.com/vi/XqZsoesa55w/maxresdefault.jpg
-print(video.date_published)  # 2016-06-17 16:00:30-07:00
+print(video.thumbnail_url)  # https://i.ytimg.com/vi_webp/XqZsoesa55w/maxresdefault.webp
 print(video.length_seconds)  # 136
 print(video.isLiveContent)  # False
 print(video.is_private)  # False
-print(video.genre)  # Education
+print(video.allowRatings)  # True
+print(video.keywords)  # ['baby shark', 'baby shark dance', 'baby shark song', 'cute dance for children' ...
 ```
 
 ### Fetching playlists

@@ -41,38 +41,38 @@ def example_channel():
 
 @timeit
 def example_video():
-    video1 = Video("https://youtu.be/XqZsoesa55w")
+    video = Video("https://youtu.be/XqZsoesa55w")
 
-    print(video1.title)  #  Baby Shark Dance | #babyshark Most Viewed Video | Animal Songs | PINKFONG Songs for Children
-    print(video1.description)  # a loooong description :)
-    print(video1.author)  # Baby Shark - Pinkfong Kids’ Songs & Stories
-    print(video1.video_url)  # https://www.youtube.com/watch?v=XqZsoesa55w
+    print(video.title)  #  Baby Shark Dance | #babyshark Most Viewed Video | Animal Songs | PINKFONG Songs for Children
+    print(video.description)  # a loooong description :)
+    print(video.author_name)  # Baby Shark - Pinkfong Kids’ Songs & Stories
+    print(video.video_url)  # https://www.youtube.com/watch?v=XqZsoesa55w
 
-    print(video1.views)  # 14941899516
-    print(video1.thumbnail_url)  # https://i.ytimg.com/vi/XqZsoesa55w/maxresdefault.jpg
-    print(video1.date_published)  # 2016-06-17 16:00:30-07:00
-    print(video1.length_seconds)  # 136
-    print(video1.isLiveContent)  # False
-    print(video1.is_private)  # False
-    print(video1.genre)  # Education
+    print(video.views)  # 14941899516
+    print(video.thumbnail_url)  # https://i.ytimg.com/vi_webp/XqZsoesa55w/maxresdefault.webp
+    print(video.length_seconds)  # 136
+    print(video.isLiveContent)  # False
+    print(video.is_private)  # False
+    print(video.allowRatings)  # True
+    print(video.keywords)  # ['baby shark', 'baby shark dance', 'baby shark song', 'cute dance for children' ...
 
 
 @timeit
 def example_shorts_video():
-    video2 = Video("https://www.youtube.com/shorts/JfbnpYLe3Ms")
+    video = Video("https://www.youtube.com/shorts/JfbnpYLe3Ms")
 
-    print(video2.title)
-    print(video2.description)
-    print(video2.author)
-    print(video2.video_url)
+    print(video.title)
+    print(video.description)
+    print(video.author_name)
+    print(video.video_url)
 
-    print(video2.views)
-    print(video2.thumbnail_url)
-    print(video2.date_published)
-    print(video2.length_seconds)
-    print(video2.isLiveContent)
-    print(video2.is_private)
-    print(video2.genre)
+    print(video.views)
+    print(video.thumbnail_url)
+    print(video.length_seconds)
+    print(video.isLiveContent)
+    print(video.is_private)
+    print(video.allowRatings)
+    print(video.keywords)
 
 
 @timeit
