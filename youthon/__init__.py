@@ -6,7 +6,7 @@ __url__ = "https://github.com/anekobtw/youthon"
 __title__ = "youthon"
 __author__ = "anekobtw"
 __license__ = "MIT"
-__version__ = "0.4.1"
+__version__ = "0.4.2"
 
 from youthon.channel import Channel
 from youthon.playlist import Playlist

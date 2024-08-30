@@ -23,4 +23,4 @@ class Video:
         self.isLiveContent: bool = video_details["isLiveContent"]
         self.is_private: bool = video_details["isPrivate"]
 
-        self.keywords: list[str] = video_details["keywords"]
+        self.keywords: list[str] = video_details.get("keywords", [])
