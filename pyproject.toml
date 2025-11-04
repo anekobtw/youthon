@@ -11,6 +11,7 @@ repository = "https://github.com/anekobtw/youthon"
 python = ">=3.9"
 beautifulsoup4 = "4.12.3"
 requests = "^2.32.5"
+colorama = "^0.4.6"
 
 [tool.poetry.group.dev.dependencies]
 beautifulsoup4 = "4.12.3"

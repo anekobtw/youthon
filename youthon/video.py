@@ -11,7 +11,6 @@ class Video:
             "X-Client-Data": "CJW2yQEIpLbJAQjEtskBCKmdygEIuevKAQjr8ssBCOaEzAEItoXMAQjLicwBCKyOzAEI3I7MARiOnssB",
         }
         response = requests.get(url, headers=headers)
-
         video_details = get_initial_player_response(response)["videoDetails"]
 
         self.title = video_details["title"]

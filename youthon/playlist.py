@@ -9,20 +9,15 @@ class Playlist:
         response = requests.get(url)
         soup = BeautifulSoup(response.content, "html.parser")
         initial_data = get_yt_initial_data(response)
+        metadata = initial_data["contents"]["twoColumnWatchNextResults"]["playlist"]["playlist"]
 
-        playlist_data = initial_data["contents"]["twoColumnWatchNextResults"]["playlist"]["playlist"]
-
-        self.title = playlist_data.get("title", "Unknown Title")
+        self.title = metadata["title"]
+        self.author_name = metadata["ownerName"]["simpleText"]
         self.author_url = soup.find_all("span")[0].find("link")["href"]
-        self.playlist_id = playlist_data.get("playlistId", "")
-        self.playlist_url = f"https://www.youtube.com/playlist?list={self.playlist_id}"
-        self.total_videos = int(playlist_data.get("totalVideos", 0))
-        self.is_infinite = playlist_data.get("isInfinite", False)
 
-        self.video_urls = [self.get_video_url(i, playlist_data) for i in range(self.total_videos)]
+        self.playlist_id = metadata["playlistId"]
+        self.playlist_url = metadata["playlistShareUrl"]
+        self.total_videos = int(metadata["totalVideos"])
+        self.is_infinite = metadata.get("isInfinite", False)
 
-    def get_video_url(self, video_id: int, playlist_data) -> str:
-        try:
-            return f'https://youtube.com/watch/?v={playlist_data["contents"][video_id]["playlistPanelVideoRenderer"]["navigationEndpoint"]["watchEndpoint"]["videoId"]}'
-        except (IndexError, KeyError):
-            return f"Error: Video ID {video_id} not found"
+        self.video_urls = [f'https://youtube.com/watch/?v={metadata["contents"][video_id]["playlistPanelVideoRenderer"]["navigationEndpoint"]["watchEndpoint"]["videoId"]}' for video_id in range(self.total_videos)]
