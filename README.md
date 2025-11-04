@@ -82,7 +82,7 @@ Contributions are always welcome!
 
 See `contributing.md` for ways to get started.
 
-Please adhere to this project's `code of conduct`.
+Please adhere to this project's [code of conduct](https://github.com/anekobtw/youthon?tab=coc-ov-file).
 
 ## License
 The project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
