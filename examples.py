@@ -19,24 +19,19 @@ def timeit(func):
 
 @timeit
 def example_channel():
-    channel1 = Channel("https://www.youtube.com/@PewDiePie")
+    channel = Channel("https://www.youtube.com/@PewDiePie")
 
-    print(channel1.name)  # PewDiePie
-    print(channel1.description)  # I make videos.
-    print(channel1.channel_url)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw
-    print(channel1.profile_photo_url)  # https://yt3.googleusercontent.com/5oUY3tashyxfqsjO5SGhjT4dus8FkN9CsAHwXWISFrdPYii1FudD4ICtLfuCw6-THJsJbgoY=s900-c-k-c0x00ffffff-no-rj
-    print(channel1.channel_id)  # UC-lHJZR3Gqxm24_Vd_AJ5Yw
+    print(channel.name)  # PewDiePie
+    print(channel.description)  # I make videos.
+    print(channel.channel_url)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw
+    print(channel.profile_photo_url)  # https://yt3.googleusercontent.com/5oUY3tashyxfqsjO5SGhjT4dus8FkN9CsAHwXWISFrdPYii1FudD4ICtLfuCw6-THJsJbgoY=s900-c-k-c0x00ffffff-no-rj
+    print(channel.channel_id)  # UC-lHJZR3Gqxm24_Vd_AJ5Yw
+    print(channel.keywords)  # pewdiepie pewds gaming "felix arvid ulf" felix kjellberg
+    print(channel.is_family_safe)  # True
 
     # The following two variables may produce different results depending on your geolocation.
-    print(channel1.subscribers_count)
-    print(channel1.video_count)
-
-    print(channel1.videos_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw/videos
-    print(channel1.shorts_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw/shorts
-    print(channel1.community_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw/community
-    print(channel1.featured_channels_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw/channels
-    print(channel1.playlists_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw/playlists
-    print(channel1.about_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw/about
+    print(channel.subscribers_count)  # 110M
+    print(channel.video_count)  # 4.6K
 
 
 @timeit

@@ -31,17 +31,12 @@ print(channel.description)  # I make videos.
 print(channel.channel_url)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw
 print(channel.profile_photo_url)  # https://yt3.googleusercontent.com/5oUY3tashyxfqsjO5SGhjT4dus8FkN9CsAHwXWISFrdPYii1FudD4ICtLfuCw6-THJsJbgoY=s900-c-k-c0x00ffffff-no-rj
 print(channel.channel_id)  # UC-lHJZR3Gqxm24_Vd_AJ5Yw
+print(channel.keywords)  # pewdiepie pewds gaming "felix arvid ulf" felix kjellberg
+print(channel.is_family_safe)  # True
 
 # The following two variables may produce different results depending on your geolocation.
-print(channel.subscribers_count)
-print(channel.video_count)
-
-print(channel.videos_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw/videos
-print(channel.shorts_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw/shorts
-print(channel.community_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw/community
-print(channel.featured_channels_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw/channels
-print(channel.playlists_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw/playlists
-print(channel.about_page)  # https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw/about
+print(channel.subscribers_count)  # 110M
+print(channel.video_count)  # 4.6K
 ```
 
 ### Fetching videos
